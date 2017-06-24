@@ -7,11 +7,16 @@ export default class ActionMenu extends Phaser.Group {
 
         this.visible = false;
 
-        this.MAX_BUTTONS_IN_ROW = 4;
-        this.BUTTON_HEIGHT_ADJUST = 1.75;
+        const MAX_BUTTONS_IN_ROW = 4;
+        const BUTTON_WIDTH_ADJUST = 1.1;
+        const BUTTON_HEIGHT_ADJUST = 6;
 
-        this.buttonWidth = this.game.width / this.MAX_BUTTONS_IN_ROW;
-        this.buttonHeight = this.game.height / this.THIN_HEIGHT_ADJUST;
+        this.buttonX = 130;
+        this.buttonXOffset = 10;
+        this.buttonY = 40;
+
+        this.buttonWidth = (this.game.width - this.buttonX) / MAX_BUTTONS_IN_ROW / BUTTON_WIDTH_ADJUST;
+        this.buttonHeight = this.game.height / BUTTON_HEIGHT_ADJUST;
     }
 
     display (actions) {
@@ -24,11 +29,17 @@ export default class ActionMenu extends Phaser.Group {
                 return;
             }
 
-            let actionButton = new ActionButton(this.game, 0, 0, action);
-
             const numChildren = this.children.length;
-            actionButton.x = this.buttonWidth * numChildren;
-            actionButton.y = this.game.height - 100;
+            let x = this.buttonX + this.buttonWidth * numChildren;
+            if (numChildren > 0) {
+                x += this.buttonXOffset * numChildren;
+            }
+            let y = this.game.height - this.buttonHeight / 2 - this.buttonY;
+
+            let actionButton = new ActionButton(this.game, x, y, action);
+
+            actionButton.setWidth(this.buttonWidth);
+            actionButton.setHeight(this.buttonHeight);
 
             this.add(actionButton);
         });

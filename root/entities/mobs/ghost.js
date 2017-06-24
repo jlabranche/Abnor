@@ -6,5 +6,8 @@ export default class Ghost extends Entity {
         super(game, x, y, key, frame, element);
 
         this.addAction(new Frighten());
+        this.addAction(new Frighten());
+        this.addAction(new Frighten());
+        this.addAction(new Frighten());
     }
 }
