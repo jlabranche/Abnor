@@ -1,4 +1,4 @@
-export default class Entity extends Phaser.Sprite () {
+export default class Entity extends Phaser.Sprite {
     constructor (game, x, y, key, frame) {
         super(game, x, y, key, frame);
 
