@@ -3,6 +3,8 @@ import BootState from './states/boot';
 import MainMenuState from './states/main-menu';
 import WorldState from './states/world';
 import MapState from './states/map';
+import ArenaState from './states/arena';
+import BattlePrepState from './states/battle-prep';
 import BattleState from './states/battle';
 
 require('./index.html');
@@ -24,6 +26,8 @@ Phaser.Device.whenReady(function () {
     game.state.add('MainMenu', MainMenuState);
     game.state.add('World', WorldState);
     game.state.add('Map', MapState);
+    game.state.add('Arena', ArenaState);
+    game.state.add('BattlePrep', BattlePrepState);
     game.state.add('Battle', BattleState);
 
     game.state.start('Boot');

@@ -24,6 +24,6 @@ export default class MapState extends Phaser.State {
         this.state.start('World');
     };
     startBattleState () {
-        this.state.start('Battle');
+        this.state.start('BattlePrep');
     };
 }

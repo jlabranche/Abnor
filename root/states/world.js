@@ -18,7 +18,6 @@ export default class WorldState extends Phaser.State {
     update() {
         if (this.game.input.activePointer.isDown) {
             if (this.game.origDragPoint) {
-                console.log('inside');
                 // move the camera by the amount the mouse has moved since last update
                 this.game.camera.x += this.game.origDragPoint.x - this.game.input.activePointer.position.x;
                 this.game.camera.y += this.game.origDragPoint.y - this.game.input.activePointer.position.y;
