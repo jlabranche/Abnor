@@ -10,6 +10,10 @@ export default class Entity extends Phaser.Sprite {
         this._hitPoints = 0;
         this._speed = 0;
         this._element = undefined;
+
+        this._actions = [];
+
+        this.MAX_ACTIONS = 4;
     }
 
     get attack () { return this._attack; }
@@ -28,6 +32,7 @@ export default class Entity extends Phaser.Sprite {
 
     set speed (val) { this._speed = val; }
 
+<<<<<<< HEAD
     set element (element) {
         if (typeof this._element === 'undefined') {
             this._element = ((element)=> {
@@ -42,4 +47,13 @@ export default class Entity extends Phaser.Sprite {
     }
 
     get element () { return this._element;}
+=======
+    get actions () { return this._actions; }
+
+    addAction (action) {
+        if (this._actions.length < this.MAX_ACTIONS) {
+            this._actions.push(action);
+        }
+    }
+>>>>>>> added actions
 }

@@ -25,9 +25,9 @@ export default class MapState extends Phaser.State {
 	    this.world_button = this.game.add.button(25, this.game.height - 100, 'left-arrow', this.startWorldState, this, 2, 1, 0);
         this.world_button.fixedToCamera = true;
 
-	    this.battle_button  = this.game.add.button(50, 85, 'key', this.startBattlePrepState(0), this, 2, 1, 0);
-	    this.battle_button2 = this.game.add.button(120, 35, 'key', this.startBattlePrepState(1), this, 2, 1, 0);
-	    this.battle_button3 = this.game.add.button(205, 55, 'key', this.startBattlePrepState(2), this, 2, 1, 0);
+	    this.battle_button  = this.game.add.button(50, 85, 'key', () => { this.startBattlePrepState(0); }, this, 2, 1, 0);
+	    this.battle_button2 = this.game.add.button(120, 35, 'key', () => { this.startBattlePrepState(1); }, this, 2, 1, 0);
+	    this.battle_button3 = this.game.add.button(205, 55, 'key', () => { this.startBattlePrepState(2); }, this, 2, 1, 0);
 
         this.game.add.tween(this.logo2.cameraOffset).to( { y: 400 }, 2000, Phaser.Easing.Back.InOut, true, 0, 2000, true);
 
@@ -43,12 +43,10 @@ export default class MapState extends Phaser.State {
         }
     }
 
-    actionOnClick () {
-        console.log('clicky');
-    }
     startWorldState () {
         this.state.start('World');
     }
+
     startBattlePrepState (id) {
         this.state.start('BattlePrep', true, false, id);
     }
