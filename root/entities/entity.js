@@ -60,6 +60,12 @@ export default class Entity extends Phaser.Sprite {
         }
     }
 
+    /* The effective stats (after status effects are aplied) */
+    get effectiveAttack     () { return this.effectiveStat('attack'); }
+    get effectiveDefense    () { return this.effectiveStat('defense'); }
+    get effectiveHitPoints  () { return this.effectiveStat('hitPoints'); }
+    get effectiveSpeed      () { return this.effectiveStat('speed'); }
+
     /* Manage status effects */
     get statusEffects () { return this._statusEffects; }
     addStatusEffect (effect) {
@@ -107,9 +113,4 @@ export default class Entity extends Phaser.Sprite {
         }
         return value;
     }
-
-    get effectiveAttack     () { return this.effectiveStat('attack'); }
-    get effectiveDefense    () { return this.effectiveStat('defense'); }
-    get effectiveHitPoints  () { return this.effectiveStat('hitPoints'); }
-    get effectiveSpeed      () { return this.effectiveStat('speed'); }
 }

@@ -14,6 +14,7 @@ export default class MapState extends Phaser.State {
     create () {
         this.game.world.resize(6000, 600);
         this.game.stage.backgroundColor = '#182d3b';
+        this.background = this.game.add.sprite(0, 0, 'OceanMap');
         this.logo2 = this.game.add.sprite(500, 100, 'phaser');
         this.logo2.fixedToCamera = true;
 
