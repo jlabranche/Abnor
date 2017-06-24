@@ -12,7 +12,7 @@ export default class Entity extends Phaser.Sprite {
         this._defense = 0;
         this._hitPoints = 0;
         this._speed = 0;
-        this._element = undefined;
+        this._element = element;
 
         this._actions = [];
 
