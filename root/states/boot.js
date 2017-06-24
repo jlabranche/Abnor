@@ -23,6 +23,8 @@ export default class LoadingState extends Phaser.State {
         this.game.cache.addJSON('mobsJSON', null, mobsJSON);
 
         this.load.image('MainMenu', '/assets/images/MainMenu.png');
+	    this.game.load.spritesheet('left-arrow', '/assets/buttons/f/Sprites/transparentDark/transparentDark22.png', 193, 71);
+	    this.game.load.spritesheet('key', '/assets/buttons/f/Sprites/transparentDark/transparentDark27.png', 193, 71);
         // load json configuration files
         // this.game.cache.addJSON('jsonConfig', null, jsonConfig);
 
