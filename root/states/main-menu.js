@@ -13,7 +13,6 @@ export default class MainMenuState extends Phaser.State {
     }
 
     startWorldState () {
-        // this.state.start('World');
-        this.state.start('Map');
+        this.state.start('World');
     }
 };
