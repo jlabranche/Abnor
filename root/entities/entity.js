@@ -1,3 +1,6 @@
+
+import Phaser from 'phaser';
+
 // Elements
 import FireElement from './elements/fire';
 
@@ -14,6 +17,8 @@ export default class Entity extends Phaser.Sprite {
         this._actions = [];
 
         this.MAX_ACTIONS = 4;
+
+        this._statusEffects = [];
     }
 
     get attack () { return this._attack; }
@@ -54,4 +59,40 @@ export default class Entity extends Phaser.Sprite {
             this._actions.push(action);
         }
     }
+
+    /* Manage status effects */
+    get statusEffects () { return this._statusEffects; }
+    addStatusEffect (effect) { this._statusEffects.push(effect); }
+    removeStatusEffect (effect) {
+        for (let i = 0; i < this._statusEffects.size; ++i) {
+            if (this._statusEffects[i] === effect) {
+                this._statusEffects.splice(i, 1);
+                return;
+            }
+        }
+    }
+
+    /* Call this after each round to remove expired status effects. */
+    decreaseStatusEffects () {
+        for (let effect in this.statusEffects()) {
+            effect.step();
+            if (effect.isExpired()) {
+                this.removeStatusEffect(effect);
+            }
+        }
+    }
+
+    /* Get the effective value for a particular stat. */
+    effectiveStat (stat) {
+        let value = this[stat]();
+        for (let effect in this._statusEffects) {
+            value = effect[stat](value);
+        }
+        return value;
+    }
+
+    effectiveAttack     () { return this.effectiveStat('attack'); }
+    effectiveDefense    () { return this.effectiveStat('defense'); }
+    effectiveHitPoints  () { return this.effectiveStat('hitPoints'); }
+    effectiveSpeed      () { return this.effectiveStat('speed'); }
 }
