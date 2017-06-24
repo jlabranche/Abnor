@@ -62,7 +62,24 @@ export default class Entity extends Phaser.Sprite {
 
     /* Manage status effects */
     get statusEffects () { return this._statusEffects; }
-    addStatusEffect (effect) { this._statusEffects.push(effect); }
+    addStatusEffect (effect) {
+        const effectsForRemoval = [];
+        for (let other in this.statusEffects()) {
+            if (!other.canStackWith(effect)) {
+                return null;
+            }
+            if (!effect.canStackWith(other)) {
+                effectsForRemoval.push(other);
+            }
+        }
+        // remove current effects that the incoming effect is incompatible with
+        for (let other in effectsForRemoval) {
+            this.removeStatusEffect(other);
+        }
+        this._statusEffects.push(effect);
+        this._statusEffects.sort((a, b) => b.priority - a.priority);
+        return effect;
+    }
     removeStatusEffect (effect) {
         for (let i = 0; i < this._statusEffects.size; ++i) {
             if (this._statusEffects[i] === effect) {

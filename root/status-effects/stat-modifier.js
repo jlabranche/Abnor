@@ -1,15 +1,15 @@
 /**
  * Stat modifier can apply an arbitrary modification to one or more stats.
  *
- * const freezeEffect = new StatModifier({stat: 'speed', modifier: val => val - 5});
+ * const freezeEffect = new StatModifier('elemental', 100, 3, [], [{stat: 'speed', modifier: val => val - 5}]);
  * const effectiveSpeed = freezeEffect.speed(20);     // 15
  */
 
 import StatusEffect from 'status-effect';
 
 export default class StatModifier extends StatusEffect () {
-    constructor (modifiers) {
-        super();
+    constructor (type, priority, duration, stackBehaviors, modifiers) {
+        super(type, priority, duration, stackBehaviors);
 
         this._modifiers = modifiers;
     }
