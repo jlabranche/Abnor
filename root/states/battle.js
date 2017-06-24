@@ -1,8 +1,10 @@
-import Ghost from '../entities/mobs/ghost';
+import AllEntities from '../entities/all-entities';
 
 export default class BattleState extends Phaser.State {
     constructor (game) {
         super(game);
+
+        this.allEntities = new AllEntities();
     }
 
     init () {
@@ -33,7 +35,7 @@ export default class BattleState extends Phaser.State {
     }
 
     create () {
-        let ghost = new Ghost(this.game, 0, 0);
+        let ghost = new this.allEntities.mobHash.Ghost(this.game, 0, 0);
 
         this.game.add.existing(ghost);
     }
