@@ -1,15 +1,14 @@
 # multi-player
 
 NPM = $(shell which npm || echo "npm")
-GULP = $(shell which gulp || echo "gulp")
 
-all: node_modules $(GULP)
+all: node_modules
 
-start: gulpfile.js node_modules $(GULP)
-	gulp </dev/null
+start: node_modules
+	npm start </dev/null
 
 stop:
-	killall gulp
+	killall npm
 
 node_modules: package.json $(NPM)
 	npm install
@@ -24,11 +23,6 @@ $(NPM):
 	@which npm || exit 1
 	@sleep 2
 	make $*
-
-$(GULP):
-	@which npm || (echo "Please install npm first!" && exit 1)
-	@echo "Installing gulp ...";
-	@which gulp || sudo npm install gulp -g
 
 INSTALL_CENTOS:
 	@echo Installing epel ...
