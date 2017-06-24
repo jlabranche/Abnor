@@ -29,6 +29,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "phaser-ce": "^2.8.0",
+    "rebuild": "^0.1.2",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
