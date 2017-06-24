@@ -4,18 +4,17 @@ export default class MapState extends Phaser.State {
 		this.button;
 		this.background;
 	}
+
+    preload () {
+	    this.game.load.spritesheet('button', '/assets/buttons/button_sprite_sheet.png', 193, 71);
+	}
+
 	create () {
-		console.log("made it here");
 	    this.game.stage.backgroundColor = '#182d3b';
-	    this.background = this.game.add.tileSprite(0, 0, 800, 600, 'background');
-	    this.button = this.game.add.button(this.game.world.centerX - 95, 400, 'button', actionOnClick, this, 2, 1, 0);
+	    this.button = this.game.add.button(this.game.world.centerX - 95, 400, 'button', this.actionOnClick, this, 2, 1, 0);
 	}
 
-	preload () {
-
-	    this.game.load.spritesheet('button', '../../assets/buttons/button_sprite_sheet.png', 193, 71);
-
-	}
-
+    actionOnClick () {
+        console.log('clicky');
+    }
 }
-

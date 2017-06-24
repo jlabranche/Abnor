@@ -2,15 +2,12 @@
 
 // web fonts
 // import WebFont from 'webfontloader';
-// require('../../assets/css/fonts.css');
-// require('../../assets/fonts/[font].ttf');
+// require('assets/css/fonts.css');
+// require('assets/fonts/[font].ttf');
 
 // require in other assets to be included but not added to cache at this time
-// require('../../assets/sounds/sound.wav');
-// require('../../assets/json/tilemap.json');
-// require('../../assets/images/tileset.png');
-require('../../assets/buttons/button_sprite_sheet.png');
-require('../../assets/images/MainMenu.png');
+require('../assets/buttons/button_sprite_sheet.png');
+require('../assets/images/MainMenu.png');
 
 export default class LoadingState extends Phaser.State {
     init () {
@@ -22,7 +19,7 @@ export default class LoadingState extends Phaser.State {
     }
 
     preload () {
-        this.load.image('MainMenu', '../../assets/images/MainMenu.png');
+        this.load.image('MainMenu', '/assets/images/MainMenu.png');
         // load json configuration files
         // this.game.cache.addJSON('jsonConfig', null, jsonConfig);
 
