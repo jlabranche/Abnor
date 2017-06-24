@@ -1,4 +1,4 @@
-import Entity from '../entities/entity';
+//import Entity from '../entities/entity';
 
 export default class BattleState extends Phaser.State {
     constructor (game) {
