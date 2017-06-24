@@ -20,6 +20,7 @@ export default class LoadingState extends Phaser.State {
     }
 
     preload () {
+        this.load.image('MainMenu', '../../assets/images/MainMenu.png');
         // load json configuration files
         // this.game.cache.addJSON('jsonConfig', null, jsonConfig);
 
