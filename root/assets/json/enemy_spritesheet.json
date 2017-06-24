@@ -1,0 +1,20 @@
+{"frames": [
+
+{
+	"filename": "ghost_default",
+	"frame": {"x":0,"y":0,"w":63,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":61},
+	"sourceSize": {"w":63,"h":61}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "enemy_spritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":63,"h":61},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0ed4f4b0023d57060b93850b118836a8:fa90548533f87c55bc43f4a1da581cce:faf48928ceb19e28be3c1e934377f4d9$"
+}
+}

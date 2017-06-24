@@ -1,4 +1,5 @@
 // json imports
+import enemiesJSON from '../assets/json/enemy_spritesheet.json';
 
 // web fonts
 // import WebFont from 'webfontloader';
@@ -19,6 +20,8 @@ export default class LoadingState extends Phaser.State {
     }
 
     preload () {
+        this.game.cache.addJSON('enemiesJSON', null, enemiesJSON);
+
         this.load.image('MainMenu', '/assets/images/MainMenu.png');
         // load json configuration files
         // this.game.cache.addJSON('jsonConfig', null, jsonConfig);
@@ -37,17 +40,18 @@ export default class LoadingState extends Phaser.State {
 
     create () {
         // p2 physics
-        /* this.game.physics.startSystem(Phaser.Physics.P2JS);
-        this.game.physics.p2.setImpactEvents(true);
+        this.game.physics.startSystem(Phaser.Physics.P2JS);
+        /* this.game.physics.p2.setImpactEvents(true);
         this.game.physics.p2.restitution = 0.8; */
 
         // arcade physics
-        // this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
     }
 
     update () {
         if (this.areFontsLoaded) {
             this.state.start('MainMenu');
+            //this.state.start('Battle');
         }
     }
 

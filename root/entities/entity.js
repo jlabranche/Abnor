@@ -5,7 +5,7 @@ export default class Entity extends Phaser.Sprite () {
         this._attack = 0;
         this._defense = 0;
         this._hitPoints = 0;
-        this.speed = 0;
+        this._speed = 0;
     }
 
     get attack () { return this._attack; }
