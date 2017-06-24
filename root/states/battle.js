@@ -24,17 +24,21 @@ export default class BattleState extends Phaser.State {
                 "speed": 20,
             }, // new Entity()
         ];
+        this.audio = {};
         this.moveEnergy = 100;
     }
 
     preload () {
         this.game.load.atlas('mobs', '/assets/images/mobs_spritesheet.png', null, this.game.cache.getJSON('mobsJSON'), Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+        this.game.load.audio('slap', '/assets/sounds/slap.mp3');
     }
 
     create () {
         let ghost = new this.allEntities.mobHash.Ghost(this.game, 0, 0);
 
         this.game.add.existing(ghost);
+        this.audio.slapper = this.game.add.audio('slap');
+        this.audio.slapper.play();
 
         this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
     }
