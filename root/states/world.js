@@ -5,7 +5,7 @@ export default class WorldState extends Phaser.State {
 
         //  Make our this.game.world 2000x2000 pixels in size (the default is to match the this.game.size)
         this.game.world.setBounds(0, 0, 2000, 2000);
-	    this.mapButton = this.game.add.button(25, this.game.height - 100, 'left-arrow', this.startMapState, this);
+        this.mapButton = this.game.add.button(25, this.game.height - 100, 'left-arrow', this.startMapState, this);
         this.mapButton.fixedToCamera = true;
 
         for (var i = 0; i < 150; i++)
