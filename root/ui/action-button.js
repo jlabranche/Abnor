@@ -4,13 +4,10 @@ export default class ActionButton extends Phaser.Group {
 
         this.action = action;
 
-        const MAX_BUTTONS_IN_ROW = 4;
-        const THIN_HEIGHT_ADJUST = 1.75;
-
         this.button = new Phaser.Button(game, 0, 0, 'buttons');
         this.button.frame = 'Black';
-        this.button.width = this.game.width / MAX_BUTTONS_IN_ROW;
-        this.button.height = this.game.height / THIN_HEIGHT_ADJUST / MAX_BUTTONS_IN_ROW;
+        this.button.width = this.width;
+        this.button.height = this.height;
 
         this.label = new Phaser.Text(game, 0, 0, this.action.label, {
             font: '20pt Arial',

@@ -50,9 +50,11 @@ export default class BattleState extends Phaser.State {
 
         this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
 
-        this.actionMenu = new ActionMenu(this.game);
+        // test action menu for ghost
+        //this.actionMenu = new ActionMenu(this.game);
 
-        // this.actionMenu.display(ghost.actions);
+        this.actionMenu.display(ghost.actions);
+
         this.audio.slapper = this.game.add.audio('slap');
         this.audio.slapper.play();
 

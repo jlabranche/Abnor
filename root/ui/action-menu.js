@@ -10,8 +10,8 @@ export default class ActionMenu extends Phaser.Group {
         this.MAX_BUTTONS_IN_ROW = 4;
         this.BUTTON_HEIGHT_ADJUST = 1.75;
 
-        this.buttonWidth = this.game.width / MAX_BUTTONS_IN_ROW;
-        this.buttonHeight = this.game.height / THIN_HEIGHT_ADJUST / MAX_BUTTONS_IN_ROW;
+        this.buttonWidth = this.game.width / this.MAX_BUTTONS_IN_ROW;
+        this.buttonHeight = this.game.height / this.THIN_HEIGHT_ADJUST;
     }
 
     display (actions) {
@@ -24,12 +24,13 @@ export default class ActionMenu extends Phaser.Group {
                 return;
             }
 
-            let actionButton = new ActionButton(this.game, 0, 0, action)
+            let actionButton = new ActionButton(this.game, 0, 0, action);
 
             const numChildren = this.children.length;
-            actionButton.x =
+            actionButton.x = this.buttonWidth * numChildren;
+            actionButton.y = this.game.height - 100;
 
-            this.add();
+            this.add(actionButton);
         });
 
         this.show();
