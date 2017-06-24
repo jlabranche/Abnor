@@ -9,6 +9,8 @@ import buttonsJSON from '../assets/json/buttons_spritesheet.json';
 
 // require in other assets to be included but not added to cache at this time
 require('../assets/buttons/button_sprite_sheet.png');
+require('../assets/buttons/f/Sprites/transparentDark/transparentDark48.png');
+require('../assets/buttons/f/Sprites/transparentDark/transparentDark31.png');
 require('../assets/images/MainMenu.png');
 require('../assets/images/mobs_spritesheet.png');
 require('../assets/images/buttons_spritesheet.png');
@@ -29,6 +31,8 @@ export default class LoadingState extends Phaser.State {
         this.load.image('MainMenu', '/assets/images/MainMenu.png');
         this.game.load.spritesheet('left-arrow', '/assets/buttons/f/Sprites/transparentDark/transparentDark22.png', 193, 71);
         this.game.load.spritesheet('key', '/assets/buttons/f/Sprites/transparentDark/transparentDark27.png', 193, 71);
+        this.game.load.spritesheet('map-button', '/assets/buttons/f/Sprites/transparentDark/transparentDark48.png', 193, 71);
+        this.game.load.spritesheet('settings', '/assets/buttons/f/Sprites/transparentDark/transparentDark31.png', 193, 71);
         // load json configuration files
         // this.game.cache.addJSON('jsonConfig', null, jsonConfig);
 

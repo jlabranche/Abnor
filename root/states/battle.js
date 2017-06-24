@@ -47,6 +47,8 @@ export default class BattleState extends Phaser.State {
 
         this.game.add.existing(ghost);
         this.game.add.existing(snake);
+	    this.world_button = this.game.add.button(15, this.game.height - 65, 'settings', this.openSettings, this, 2, 1, 0);
+        this.world_button.fixedToCamera = true;
 
         this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
 
@@ -100,5 +102,8 @@ export default class BattleState extends Phaser.State {
         if (defender.hitPoints <= 0) {
             console.log(defender, ' died!');
         }
+    }
+    openSettings() {
+        
     }
 }
