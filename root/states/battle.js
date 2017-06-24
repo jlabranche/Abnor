@@ -10,26 +10,27 @@ export default class BattleState extends Phaser.State {
 
     init () {
         this.heroes = [
-            {
-                "attack": 30,
-                "defense": 30,
-                "hitPoints": 300,
-                "speed": 30,
-            }, // new Entity()
+            new this.allEntities.mobHash.Ghost(this.game, 0, 0)
         ];
         this.enemies = [
-            {
-                "attack": 20,
-                "defense": 20,
-                "hitPoints": 200,
-                "speed": 20,
-            }, // new Entity()
+            new this.allEntities.mobHash.Snake(this.game, 100, 0)
+
         ];
         for (let hero of this.heroes) {
             hero.energy = 0;
+            hero.attack = 30;
+            hero.defense = 30;
+            hero.hitPoints = 300;
+            hero.speed = 30;
+            hero.currentHP = hero.hitPoints;
         }
         for (let enemy of this.enemies) {
             enemy.energy = 0;
+            enemy.attack = 20;
+            enemy.defense = 20;
+            enemy.hitPoints = 200;
+            enemy.speed = 20;
+            enemy.currentHP = enemy.hitPoints;
         }
         this.moveEnergy = 100;
         this.audio = {};
