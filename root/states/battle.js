@@ -25,9 +25,6 @@ export default class BattleState extends Phaser.State {
             }, // new Entity()
         ];
         this.moveEnergy = 100;
-        this.tickLength = 3000; // milliseconds
-        this.tick = int(new Date.getTime() / this.tickLength);
-        this.step()
     }
 
     preload () {
@@ -38,22 +35,18 @@ export default class BattleState extends Phaser.State {
         let ghost = new this.allEntities.mobHash.Ghost(this.game, 0, 0);
 
         this.game.add.existing(ghost);
-    }
-    update () {
-        let tick = int(new Date.getTime() / this.tickLength);
-        if (tick > this.tick) {
-            this.step();
-        }
+
+        this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
     }
 
     step () {
-        for (hero of this.heroes) {
+        for (let hero of this.heroes) {
             hero.energy += hero.speed;
             if (hero.speed >= this.moveEnergy) {
                 hero.attack(enemies[0]);
             }
         }
-        for (enemy of this.enemies) {
+        for (let enemy of this.enemies) {
             enemy.energy += enemy.speed;
             if (enemy.speed >= this.moveEnergy) {
                 enemy.attack(heroes[0]);
@@ -61,13 +54,12 @@ export default class BattleState extends Phaser.State {
         }
 
         console.log('===========');
-        console.log('this.tick: ' + this.tick);
-        console.log('this.heroes: ' + this.heroes);
-        console.log('this.enemies: ' + this.enemies);
+        console.log('this.heroes: ', this.heroes);
+        console.log('this.enemies: ',  this.enemies);
         console.log('===========');
         console.log('');
     }
-   
+
     roll (max) {
         Math.floor(Math.random() * max) + 1;
     }
