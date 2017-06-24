@@ -1,6 +1,6 @@
 import Element from '../element';
 
-export default class FireElement extends Element () {
+export default class FireElement extends Element {
     constructor (game) {
         super(game);
         this._weakness = 'water';
