@@ -1,5 +1,6 @@
 // json imports
 import mobsJSON from '../assets/json/mobs_spritesheet.json';
+import buttonsJSON from '../assets/json/buttons_spritesheet.json';
 
 // web fonts
 // import WebFont from 'webfontloader';
@@ -9,6 +10,8 @@ import mobsJSON from '../assets/json/mobs_spritesheet.json';
 // require in other assets to be included but not added to cache at this time
 require('../assets/buttons/button_sprite_sheet.png');
 require('../assets/images/MainMenu.png');
+require('../assets/images/mobs_spritesheet.png');
+require('../assets/images/buttons_spritesheet.png');
 
 export default class LoadingState extends Phaser.State {
     init () {
@@ -21,6 +24,7 @@ export default class LoadingState extends Phaser.State {
 
     preload () {
         this.game.cache.addJSON('mobsJSON', null, mobsJSON);
+        this.game.cache.addJSON('buttonsJSON', null, buttonsJSON);
 
         this.load.image('MainMenu', '/assets/images/MainMenu.png');
         // load json configuration files

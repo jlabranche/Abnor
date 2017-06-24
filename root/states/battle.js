@@ -1,4 +1,5 @@
 import AllEntities from '../entities/all-entities';
+import ActionMenu from '../ui/action-menu';
 
 export default class BattleState extends Phaser.State {
     constructor (game) {
@@ -29,14 +30,21 @@ export default class BattleState extends Phaser.State {
 
     preload () {
         this.game.load.atlas('mobs', '/assets/images/mobs_spritesheet.png', null, this.game.cache.getJSON('mobsJSON'), Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+        this.game.load.atlas('buttons', '/assets/images/buttons_spritesheet.png', null, this.game.cache.getJSON('buttonsJSON'), Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
     }
 
     create () {
         let ghost = new this.allEntities.mobHash.Ghost(this.game, 0, 0);
+        let snake = new this.allEntities.mobHash.Snake(this.game, 100, 0);
 
         this.game.add.existing(ghost);
+        this.game.add.existing(snake);
 
         this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
+
+        this.actionMenu = new ActionMenu(this.game);
+
+        // this.actionMenu.display(ghost.actions);
     }
 
     step () {

@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.4.0</string>
         <key>fileName</key>
-        <string>/Users/tchase/js/Abnor/root/assets/texture_packer/enemy_spritesheet.tps</string>
+        <string>/Users/tchase/js/Abnor/root/assets/texture_packer/buttons_spritesheet.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -36,7 +36,7 @@
         <key>dataFormat</key>
         <string>phaser-json-array</string>
         <key>textureFileName</key>
-        <filename>../images/mobs_spritesheet.png</filename>
+        <filename>../images/buttons_spritesheet.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -150,7 +150,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../json/mobs_spritesheet.json</filename>
+                <filename>../json/buttons_spritesheet.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -199,37 +199,41 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../images/enemies_parts/ghost_default.png</key>
+            <key type="filename">../images/buttons_parts/Black.png</key>
+            <key type="filename">../images/buttons_parts/Blue.png</key>
+            <key type="filename">../images/buttons_parts/DarkGrey.png</key>
+            <key type="filename">../images/buttons_parts/Green.png</key>
+            <key type="filename">../images/buttons_parts/LightBlue.png</key>
+            <key type="filename">../images/buttons_parts/LightGrey.png</key>
+            <key type="filename">../images/buttons_parts/Orange.png</key>
+            <key type="filename">../images/buttons_parts/Purple.png</key>
+            <key type="filename">../images/buttons_parts/Red.png</key>
+            <key type="filename">../images/buttons_parts/Yellow.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>16,15,32,31</rect>
+                <rect>150,40,300,80</rect>
                 <key>scale9Paddings</key>
-                <rect>16,15,32,31</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../images/enemies_parts/snake_default.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>15,16,30,32</rect>
-                <key>scale9Paddings</key>
-                <rect>15,16,30,32</rect>
+                <rect>150,40,300,80</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>../images/enemies_parts/ghost_default.png</filename>
-            <filename>../images/enemies_parts/snake_default.png</filename>
+            <filename>../images/buttons_parts/Green.png</filename>
+            <filename>../images/buttons_parts/Yellow.png</filename>
+            <filename>../images/buttons_parts/Red.png</filename>
+            <filename>../images/buttons_parts/LightBlue.png</filename>
+            <filename>../images/buttons_parts/Blue.png</filename>
+            <filename>../images/buttons_parts/Purple.png</filename>
+            <filename>../images/buttons_parts/LightGrey.png</filename>
+            <filename>../images/buttons_parts/DarkGrey.png</filename>
+            <filename>../images/buttons_parts/Orange.png</filename>
+            <filename>../images/buttons_parts/Black.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

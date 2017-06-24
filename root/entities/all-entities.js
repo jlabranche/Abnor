@@ -1,4 +1,5 @@
 import Ghost from './mobs/ghost';
+import Snake from './mobs/snake';
 
 export default class AllEntities {
     constructor () {
@@ -11,7 +12,8 @@ export default class AllEntities {
 
     get mobList () {
         return [
-            Ghost
+            Ghost,
+            Snake
         ];
     }
 
