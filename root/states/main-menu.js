@@ -1,13 +1,15 @@
 export default class MainMenuState extends Phaser.State {
     init () {
-        this.game.stage.backgroundColor = '#00f';
+        this.game.stage.backgroundColor = '#559';
     };
 
     preload () {
     };
 
     create () {
-       this.mainMenuButton = this.game.add.button(this.game.width / 2, this.game.height / 2, 'MainMenu', this.startWorldState, this)
+       this.mainMenuButton = this.game.add.button(this.game.width / 2, this.game.height / 2, 'MainMenu', this.startWorldState, this);
+        this.mainMenuButton.anchor.setTo(0.5);
+        this.mainMenuButton.scale.setTo(0.5);
     };
 
     startWorldState () {

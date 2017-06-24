@@ -7,7 +7,7 @@ import BattleState from './states/battle';
 
 require('./index.html');
 
-let game = new Phaser.Game(800, 600);
+let game = new Phaser.Game(640, 360);
 
 Phaser.Device.whenReady(function () {
     // plugins
