@@ -33,6 +33,8 @@ export default class LoadingState extends Phaser.State {
         this.game.load.spritesheet('key', '/assets/buttons/f/Sprites/transparentDark/transparentDark27.png', 193, 71);
         this.game.load.spritesheet('map-button', '/assets/buttons/f/Sprites/transparentDark/transparentDark48.png', 193, 71);
         this.game.load.spritesheet('settings', '/assets/buttons/f/Sprites/transparentDark/transparentDark31.png', 193, 71);
+        this.game.load.spritesheet('auto-pause', '/assets/buttons/f/Sprites/transparentDark/transparentDark12.png', 193, 71);
+        this.game.load.spritesheet('auto-play', '/assets/buttons/f/Sprites/transparentDark/transparentDark14.png', 193, 71);
         // load json configuration files
         // this.game.cache.addJSON('jsonConfig', null, jsonConfig);
 
