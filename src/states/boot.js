@@ -10,6 +10,7 @@
 // require('../../assets/json/tilemap.json');
 // require('../../assets/images/tileset.png');
 require('../../assets/buttons/button_sprite_sheet.png');
+require('../../assets/images/MainMenu.png');
 
 export default class LoadingState extends Phaser.State {
     init () {
