@@ -32,7 +32,6 @@ export default class Entity extends Phaser.Sprite {
 
     set speed (val) { this._speed = val; }
 
-<<<<<<< HEAD
     set element (element) {
         if (typeof this._element === 'undefined') {
             this._element = ((element)=> {
@@ -47,7 +46,7 @@ export default class Entity extends Phaser.Sprite {
     }
 
     get element () { return this._element;}
-=======
+
     get actions () { return this._actions; }
 
     addAction (action) {
@@ -55,5 +54,4 @@ export default class Entity extends Phaser.Sprite {
             this._actions.push(action);
         }
     }
->>>>>>> added actions
 }
