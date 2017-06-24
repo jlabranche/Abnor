@@ -1,6 +1,6 @@
 export default class MainMenuState extends Phaser.State {
     init () {
-        this.game.stage.backgroundColor = '#559';
+        this.game.stage.backgroundColor = '#555';
     };
 
     preload () {
