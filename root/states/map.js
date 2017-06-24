@@ -9,16 +9,11 @@ export default class MapState extends Phaser.State {
 	}
 
     preload () {
-	    this.game.load.spritesheet('left-arrow', '/assets/buttons/f/Sprites/transparentDark/transparentDark22.png', 193, 71);
-	    this.game.load.spritesheet('key', '/assets/buttons/f/Sprites/transparentDark/transparentDark27.png', 193, 71);
 	}
 
 	create () {
         this.game.world.resize(6000, 600);
 	    this.game.stage.backgroundColor = '#182d3b';
-        var t = this.game.add.text(200, 500, "this text is fixed to the camera", { font: "32px Arial", fill: "#ffffff", align: "center" });
-        t.fixedToCamera = true;
-        t.cameraOffset.setTo(200, 500);
         this.logo2 = this.game.add.sprite(500, 100, 'phaser');
         this.logo2.fixedToCamera = true;
 
@@ -32,7 +27,6 @@ export default class MapState extends Phaser.State {
         this.game.add.tween(this.logo2.cameraOffset).to( { y: 400 }, 2000, Phaser.Easing.Back.InOut, true, 0, 2000, true);
 
         this.cursors = this.game.input.keyboard.createCursorKeys();
-
 	}
 
     update() {
