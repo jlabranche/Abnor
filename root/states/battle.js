@@ -1,10 +1,8 @@
-import Entity from '../entities/entity';
+import Ghost from '../entities/enemies/ghost';
 
 export default class BattleState extends Phaser.State {
     constructor (game) {
         super(game);
-
-        console.log(this.game);
     }
 
     preload () {
@@ -12,10 +10,8 @@ export default class BattleState extends Phaser.State {
     }
 
     create () {
-        let entity = new Entity(this.game, 0, 0, 'enemies', 'ghost_default');
-        //let entity = new Entity(this.game, 0, 0);
-        //console.log(entity);
+        let ghost = new Ghost(this.game, 0, 0);
 
-        this.game.add.existing(entity);
+        this.game.add.existing(ghost);
     }
 }
