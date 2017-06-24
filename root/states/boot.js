@@ -1,5 +1,5 @@
 // json imports
-import enemiesJSON from '../assets/json/enemy_spritesheet.json';
+import mobsJSON from '../assets/json/mobs_spritesheet.json';
 
 // web fonts
 // import WebFont from 'webfontloader';
@@ -20,7 +20,7 @@ export default class LoadingState extends Phaser.State {
     }
 
     preload () {
-        this.game.cache.addJSON('enemiesJSON', null, enemiesJSON);
+        this.game.cache.addJSON('mobsJSON', null, mobsJSON);
 
         this.load.image('MainMenu', '/assets/images/MainMenu.png');
         // load json configuration files

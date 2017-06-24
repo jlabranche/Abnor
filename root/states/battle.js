@@ -1,4 +1,4 @@
-import Ghost from '../entities/enemies/ghost';
+import Ghost from '../entities/mobs/ghost';
 
 export default class BattleState extends Phaser.State {
     constructor (game) {
@@ -6,7 +6,7 @@ export default class BattleState extends Phaser.State {
     }
 
     preload () {
-        this.game.load.atlas('enemies', '/assets/images/enemy_spritesheet.png', null, this.game.cache.getJSON('enemiesJSON'), Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+        this.game.load.atlas('mobs', '/assets/images/mobs_spritesheet.png', null, this.game.cache.getJSON('mobsJSON'), Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
     }
 
     create () {

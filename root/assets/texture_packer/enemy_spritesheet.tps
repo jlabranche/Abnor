@@ -36,7 +36,7 @@
         <key>dataFormat</key>
         <string>phaser-json-array</string>
         <key>textureFileName</key>
-        <filename>../images/enemy_spritesheet.png</filename>
+        <filename>../images/mobs_spritesheet.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>pvrCompressionQuality</key>
@@ -150,7 +150,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../json/enemy_spritesheet.json</filename>
+                <filename>../json/mobs_spritesheet.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
