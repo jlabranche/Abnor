@@ -12,7 +12,7 @@ export default class BattleState extends Phaser.State {
             {
                 "attack": 30,
                 "defense": 30,
-                "hitPoints": 3000,
+                "hitPoints": 300,
                 "speed": 30,
             }, // new Entity()
         ];
@@ -20,12 +20,18 @@ export default class BattleState extends Phaser.State {
             {
                 "attack": 20,
                 "defense": 20,
-                "hitPoints": 2000,
+                "hitPoints": 200,
                 "speed": 20,
             }, // new Entity()
         ];
-        this.audio = {};
+        for (let hero of this.heroes) {
+            hero.energy = 0;
+        }
+        for (let enemy of this.enemies) {
+            enemy.energy = 0;
+        }
         this.moveEnergy = 100;
+        this.audio = {};
     }
 
     preload () {
@@ -40,20 +46,22 @@ export default class BattleState extends Phaser.State {
         this.audio.slapper = this.game.add.audio('slap');
         this.audio.slapper.play();
 
-        this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
+        this.game.time.events.loop(Phaser.Timer.SECOND * 1, this.step, this);
     }
 
     step () {
         for (let hero of this.heroes) {
             hero.energy += hero.speed;
-            if (hero.speed >= this.moveEnergy) {
-                hero.attack(enemies[0]);
+            if (hero.energy >= this.moveEnergy) {
+                this.attack(hero, this.enemies[0]);
+                hero.energy -= this.moveEnergy;
             }
         }
         for (let enemy of this.enemies) {
             enemy.energy += enemy.speed;
-            if (enemy.speed >= this.moveEnergy) {
-                enemy.attack(heroes[0]);
+            if (enemy.energy >= this.moveEnergy) {
+                this.attack(enemy, this.heroes[0]);
+                enemy.energy -= this.moveEnergy;
             }
         }
 
@@ -65,10 +73,20 @@ export default class BattleState extends Phaser.State {
     }
 
     roll (max) {
-        Math.floor(Math.random() * max) + 1;
+        return Math.floor(Math.random() * max) + 1;
     }
 
     attack (attacker, defender) {
-        console.log(attacker + ' attacks ' + defender);
+        console.log(attacker, ' attacks ', defender);
+        let damage = this.roll(attacker.attack);
+        let defense = this.roll(defender.defense);
+        console.log('Damage/Defense: ', damage, defense);
+        damage -= defense;
+        if (damage > 0) {
+            defender.hitPoints -= damage;
+        }
+        if (defender.hitPoints <= 0) {
+            console.log(defender, ' died!');
+        }
     }
 }
