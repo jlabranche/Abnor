@@ -91,8 +91,8 @@ export default class Entity extends Phaser.Sprite {
         return value;
     }
 
-    effectiveAttack     () { return this.effectiveStat('attack'); }
-    effectiveDefense    () { return this.effectiveStat('defense'); }
-    effectiveHitPoints  () { return this.effectiveStat('hitPoints'); }
-    effectiveSpeed      () { return this.effectiveStat('speed'); }
+    get effectiveAttack     () { return this.effectiveStat('attack'); }
+    get effectiveDefense    () { return this.effectiveStat('defense'); }
+    get effectiveHitPoints  () { return this.effectiveStat('hitPoints'); }
+    get effectiveSpeed      () { return this.effectiveStat('speed'); }
 }
