@@ -12,9 +12,9 @@ const definePlugin = new webpack.DefinePlugin({
 });
 
 module.exports = {
-    context: path.resolve(__dirname, '../src'),
+    context: path.resolve(__dirname, '../root'),
     entry: {
-        app: ['../src/app.js'],
+        app: ['../root/app.js'],
         vendor: ['lodash', 'pixi', 'p2', 'phaser', 'webfontloader'],
     },
     output: {
@@ -25,7 +25,7 @@ module.exports = {
     },
     devtool: 'cheap-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, '../src'),
+        contentBase: path.resolve(__dirname, '../root'),
         watchContentBase: true,
     },
     plugins: [
@@ -64,7 +64,7 @@ module.exports = {
                 }],
             },
             {
-                test: /src\/.*\.(html)$/,
+                test: /root\/.*\.(html)$/,
                 use: [{
                     loader: "file-loader",
                     options: {
@@ -74,7 +74,7 @@ module.exports = {
                 }],
             },
             {
-                test: /src\/assets\/.*\.(css|CSS|jpe?g|JPE?G|gif|GIF|png|PNG|svg|SVG|woff|WOFF|ttf|TTF|wav|WAV|mp3|MP3|html|HTML)$/,
+                test: /root\/assets\/.*\.(css|CSS|jpe?g|JPE?G|gif|GIF|png|PNG|svg|SVG|woff|WOFF|ttf|TTF|wav|WAV|mp3|MP3|html|HTML)$/,
                 use: [{
                     loader: "file-loader",
                     options: {
