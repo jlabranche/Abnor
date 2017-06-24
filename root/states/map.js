@@ -36,6 +36,15 @@ export default class MapState extends Phaser.State {
 	}
 
     update() {
+        if (this.game.input.activePointer.isDown) {
+            if (this.game.origDragPoint) {
+                this.game.camera.x += this.game.origDragPoint.x - this.game.input.activePointer.position.x;
+            }
+            this.game.origDragPoint = this.game.input.activePointer.position.clone();
+        } else {
+            this.game.origDragPoint = null;
+        }
+
         if (this.cursors.left.isDown) {
             this.game.camera.x -= 4;
         } else if (this.cursors.right.isDown) {
