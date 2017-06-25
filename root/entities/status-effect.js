@@ -6,22 +6,22 @@
 
 export default class StatusEffect {
     constructor (type, priority, duration, stackBehaviors) {
-        this._type              = type;
-        this._priority          = priority || 0;
-        this._duration          = duration;
-        this._countdown         = duration;
-        this._stackBehaviors    = stackBehaviors || [];
+        this._type = type;
+        this._priority = priority || 0;
+        this._duration = duration;
+        this._countdown = duration;
+        this._stackBehaviors = stackBehaviors || [];
     }
 
     /* Accessors */
-    get type        () { return this._type; }
-    get priority    () { return this._priority; }
-    get duration    () { return this._duration; }
-    get countdown   () { return this._countdown; }
+    get type () { return this._type; }
+    get priority () { return this._priority; }
+    get duration () { return this._duration; }
+    get countdown () { return this._countdown; }
 
     /* Status effect duration management */
-    step            () { return --this._countdown; }
-    get isExpired   () { if (this._duration === -1) return false; return this._countdown > 0; }
+    step () { return --this._countdown; }
+    get isExpired () { if (this._duration === -1) return false; return this._countdown > 0; }
 
     /* Determine if an effect can stack with another. */
     canStackWith (other) {
@@ -34,10 +34,10 @@ export default class StatusEffect {
     }
 
     /* The stats */
-    attack      (val) { return val; }
-    defense     (val) { return val; }
-    hitPoints   (val) { return val; }
-    speed       (val) { return val; }
+    attack (val) { return val; }
+    defense (val) { return val; }
+    hitPoints (val) { return val; }
+    speed (val) { return val; }
 }
 
 /*
@@ -45,8 +45,7 @@ export default class StatusEffect {
  * another.
  */
 export const StackBehavior = {
-    ALWAYS:         () => true,
-    NEVER:          () => false,
-    NOT_SAME_TYPE:  (a, b) => a.type !== b.type,
+    ALWAYS: () => true,
+    NEVER: () => false,
+    NOT_SAME_TYPE: (a, b) => a.type !== b.type
 };
-

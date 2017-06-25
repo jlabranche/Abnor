@@ -86,7 +86,7 @@ export default class BattleState extends Phaser.State {
 
         console.log('===========');
         console.log('this.heroes: ', this.heroes);
-        console.log('this.enemies: ',  this.enemies);
+        console.log('this.enemies: ', this.enemies);
         console.log('===========');
         console.log('');
     }
@@ -108,14 +108,14 @@ export default class BattleState extends Phaser.State {
             console.log(defender, ' died!');
         }
     }
-    openSettings() {
-        
+    openSettings () {
+
     }
-    startAuto() {
+    startAuto () {
         this.autoPause.visible = true;
         this.autoPlay.visible = false;
     }
-    stopAuto() {
+    stopAuto () {
         this.autoPause.visible = false;
         this.autoPlay.visible = true;
     }

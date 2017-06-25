@@ -39,18 +39,18 @@ export default class Entity extends Phaser.Sprite {
 
     set element (element) {
         if (typeof this._element === 'undefined') {
-            this._element = ((element)=> {
+            this._element = (element) => {
                 switch (element) {
                     case 'fire':
                         return FireElement();
                     default:
                         break;
                 }
-            });
+            };
         }
     }
 
-    get element () { return this._element;}
+    get element () { return this._element; }
 
     get actions () { return this._actions; }
 
@@ -61,10 +61,10 @@ export default class Entity extends Phaser.Sprite {
     }
 
     /* The effective stats (after status effects are aplied) */
-    get effectiveAttack     () { return this.effectiveStat('attack'); }
-    get effectiveDefense    () { return this.effectiveStat('defense'); }
-    get effectiveHitPoints  () { return this.effectiveStat('hitPoints'); }
-    get effectiveSpeed      () { return this.effectiveStat('speed'); }
+    get effectiveAttack () { return this.effectiveStat('attack'); }
+    get effectiveDefense () { return this.effectiveStat('defense'); }
+    get effectiveHitPoints () { return this.effectiveStat('hitPoints'); }
+    get effectiveSpeed () { return this.effectiveStat('speed'); }
 
     /* Manage status effects */
     get statusEffects () { return this._statusEffects; }

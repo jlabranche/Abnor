@@ -1,5 +1,5 @@
 export default class ActionButton extends Phaser.Group {
-    constructor(game, x, y, action) {
+    constructor (game, x, y, action) {
         super(game);
 
         this.x = x;

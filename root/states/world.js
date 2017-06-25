@@ -1,6 +1,5 @@
 export default class WorldState extends Phaser.State {
-
-    create() {
+    create () {
         this.game.stage.backgroundColor = '#2d2d2d';
 
         //  Make our this.game.world 2000x2000 pixels in size (the default is to match the this.game.size)
@@ -9,16 +8,14 @@ export default class WorldState extends Phaser.State {
         this.mapButton.fixedToCamera = true;
         this.game.world.bringToTop(this.mapButton);
 
-        for (var i = 0; i < 150; i++)
-        {
+        for (var i = 0; i < 150; i++) {
             this.game.add.sprite(this.game.world.randomX, this.game.world.randomY, 'mushroom');
         }
 
         this.keyboard = this.game.input.keyboard.createCursorKeys();
-
     }
 
-    update() {
+    update () {
         if (this.game.input.activePointer.isDown) {
             if (this.game.origDragPoint) {
                 // move the camera by the amount the mouse has moved since last update
@@ -31,29 +28,20 @@ export default class WorldState extends Phaser.State {
             this.game.origDragPoint = null;
         }
 
-        if (this.keyboard.up.isDown)
-        {
+        if (this.keyboard.up.isDown) {
             this.game.camera.y -= 4;
-        }
-        else if (this.keyboard.down.isDown)
-        {
+        } else if (this.keyboard.down.isDown) {
             this.game.camera.y += 4;
         }
 
-        if (this.keyboard.left.isDown)
-        {
+        if (this.keyboard.left.isDown) {
             this.game.camera.x -= 4;
-        }
-        else if (this.keyboard.right.isDown)
-        {
+        } else if (this.keyboard.right.isDown) {
             this.game.camera.x += 4;
         }
-
     }
-    render() {
-
+    render () {
         this.game.debug.cameraInfo(this.game.camera, 32, 32);
-
     }
     startMapState () {
         this.state.start('Map');
