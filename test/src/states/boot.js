@@ -1,4 +1,4 @@
-import BootState from '../../../src/states/boot';
+import BootState from '../../../root/states/boot';
 
 describe('BootState', () => {
     let bootState;

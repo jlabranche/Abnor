@@ -1,4 +1,4 @@
-import MainMenuState from '../../../src/states/main-menu';
+import MainMenuState from '../../../root/states/main-menu';
 
 describe('MainMenuState', () => {
     let mainMenuState;
