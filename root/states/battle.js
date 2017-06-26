@@ -48,11 +48,11 @@ export default class BattleState extends Phaser.State {
 
         this.game.add.existing(ghost);
         this.game.add.existing(snake);
-	    this.world_button = this.game.add.button(15, this.game.height - 65, 'settings', this.openSettings, this);
+        this.world_button = this.game.add.button(15, this.game.height - 65, 'settings', this.openSettings, this);
         this.world_button.fixedToCamera = true;
 
-	    this.autoPlay = this.game.add.button(65, this.game.height - 65, 'auto-play', this.startAuto, this);
-	    this.autoPause = this.game.add.button(65, this.game.height - 65, 'auto-pause', this.stopAuto, this);
+        this.autoPlay = this.game.add.button(65, this.game.height - 65, 'auto-play', this.startAuto, this);
+        this.autoPause = this.game.add.button(65, this.game.height - 65, 'auto-pause', this.stopAuto, this);
         this.autoPause.visible = false;
 
         this.game.time.events.loop(Phaser.Timer.SECOND * 3, this.step, this);
